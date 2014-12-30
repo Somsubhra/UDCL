@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 
-# Written by Somsubhra
+# Headers
+__author__ = "Somsubhra Bairi"
+__email__ = "somsubhra.bairi@gmail.com"
+__license__ = "WTFPL (Do What The Fuck You Want to Public License)"
+__version__ = "0.1.0"
+
 
 # All imports
 import sys
@@ -24,6 +29,9 @@ class UDCL:
     # If less than 2 arguments
     if len(sys.argv) < 2:
       self.console_show_usage("udcl <word>")
+      self.console_show_message("Urban Dictionary Command Line (v" + __version__ + ")")
+      self.console_show_message("Written by " + __author__ + "<" + __email__ + ">")
+      self.console_show_message("Licensed under " + __license__)
       return
 
     # Create the word sequence
@@ -75,8 +83,13 @@ class UDCL:
 
   # Show meaning on console
   def console_show_meaning(self, message):
-    print "\033[94m" + message + "\033[0m"
+    self.console_show_message(message)
     self.console_show_separator()
+
+
+  # Show message on console
+  def console_show_message(self, message):
+    print "\033[94m" + message + "\033[0m"
 
 
   # Show separator on console
