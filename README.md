@@ -6,7 +6,7 @@ Urban Dictionary Command Line Utility
 ### Quick install
 Run the following on terminal
 ```
-curl https://raw.githubusercontent.com/Somsubhra/UDCL/master/install.sh | sudo sh
+curl -s https://raw.githubusercontent.com/Somsubhra/UDCL/master/install.sh | sudo sh
 ```
 ### Usage
 ```
