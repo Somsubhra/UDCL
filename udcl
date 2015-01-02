@@ -45,8 +45,14 @@ class UDCL:
 
     target_url = self.get_api_url(self.word)
 
-    # Fetch the data
-    data = json.load(urllib2.urlopen(target_url))
+    try:
+      # Fetch the data
+      data = json.load(urllib2.urlopen(target_url))
+    except:
+      # Error handling
+      self.console_show_error("Could not contact Urban Dictionary server :(")
+      self.console_show_message("Please check your internet connection")
+      return
 
     meaning_list = data["list"]
 
